@@ -48,6 +48,7 @@ public class SellerController {
          return true;
     }
 
+
     public SellerRepository getRepository() {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         return context.getBean(SellerRepository.class);
