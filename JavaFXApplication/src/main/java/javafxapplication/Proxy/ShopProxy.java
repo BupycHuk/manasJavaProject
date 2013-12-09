@@ -15,3 +15,5 @@ public class ShopProxy extends Proxy {
         return restTemplate.getForObject(urlService.GetServerUrl("/shops/"), Shop[].class);
     }
 }
+
+

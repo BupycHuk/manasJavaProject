@@ -38,3 +38,5 @@ public class ListSellerController implements Initializable {
         tableView1.getItems().setAll(sellers);
     }
 }
+
+

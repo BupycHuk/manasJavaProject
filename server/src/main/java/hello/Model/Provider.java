@@ -12,12 +12,12 @@ public class Provider {
     @Column(name="contacts")
     private String contacts;
 
-    protected Provider() {}
-
-    public Provider(String firstName, String lastName) {
-        this.name = firstName;
-        this.contacts = lastName;
-    }
+//    protected Provider() {}
+//
+//    public Provider(String firstName, String lastName) {
+//        this.name = firstName;
+//        this.contacts = lastName;
+//    }
 
 
     public String getName() {

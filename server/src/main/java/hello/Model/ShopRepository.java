@@ -6,3 +6,4 @@ public interface ShopRepository extends CrudRepository<Shop, Long> {
 
     Shop findByName(String name);
 }
+

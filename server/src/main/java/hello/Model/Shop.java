@@ -1,10 +1,10 @@
 package hello.Model;
 
 import javax.persistence.*;
+import java.util.Iterator;
 
 @Entity
-public class Shop
-{
+public class Shop implements Iterable<ProductsInShop> {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
@@ -32,5 +32,10 @@ public class Shop
 
     public void setContacts(String contacts) {
         this.contacts = contacts;
+    }
+
+    @Override
+    public Iterator<ProductsInShop> iterator() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

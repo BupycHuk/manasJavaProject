@@ -10,12 +10,19 @@ public class ProductsInShop {
     @Column(name="count")
     private Integer count;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "shop")
+    private Shop shop;
+
     protected ProductsInShop() {}
 
-    public ProductsInShop(Shop shop, Integer count) {
+    public ProductsInShop(Integer count ,Shop shop,Product product,Provider provider){
         this.shop = shop;
         this.count=count;
+        this.product=product;
+        this.provider=provider;
     }
+
 
     public long getId() {
         return id;
@@ -29,9 +36,7 @@ public class ProductsInShop {
         return count;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "shop")
-    private Shop shop;
+
 
     public void setShop(Shop shop) {
         this.shop = shop;
@@ -64,7 +69,6 @@ public class ProductsInShop {
     public Product getProduct() {
         return product;
     }
-
 
 }
 

@@ -1,5 +1,5 @@
 package javafxapplication.Model;
-public class Shop
+public class Provider
 {
     private long id;
     private String name;
@@ -17,10 +17,8 @@ public class Shop
         return id;
     }
 
-    public String toString()
-    {
+    public String toString(){
         return getName();
-
     }
 
     public String getContacts() {
@@ -31,4 +29,5 @@ public class Shop
         this.contacts = contacts;
     }
 }
+
 
