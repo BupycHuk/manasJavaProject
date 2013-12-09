@@ -40,12 +40,12 @@ public class SellerController {
         getRepository().save(seller);
         return seller;
     }
-    @RequestMapping(value = "/delete/{name}")
+    @RequestMapping(value = "/delete/{id}")
     public @ResponseBody
-    boolean deleteUser(@PathVariable("name") String name) {
-        Iterable<Seller> seller = getRepository().findByFullName(name);
-        getRepository().delete(seller);
-         return true;
+    boolean deleteUser(@PathVariable("id") long id) {
+
+        getRepository().delete(id);
+        return true;
     }
 
     public SellerRepository getRepository() {

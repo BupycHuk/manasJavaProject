@@ -28,4 +28,9 @@ public class SellerProxy extends Proxy {
     public Seller[] getSellers() {
         return restTemplate.getForObject(urlService.GetServerUrl("/sellers/"), Seller[].class);
     }
+
+    public void deleteSellerById(long id){
+
+        restTemplate.getForObject(urlService.GetServerUrl("/delete/"+id), Seller[].class);
+    }
 }
