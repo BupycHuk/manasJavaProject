@@ -12,8 +12,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.net.URI;
-
 /**
  *
  * @author Akim
@@ -25,6 +23,8 @@ public class JavaFXApplication extends Application {
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("/View/MainWindow.fxml"));
+
+        //Parent root = FXMLLoader.load(getClass().getResource("/View/TreeView.fxml"));
         
         Scene scene = new Scene(root);
         
