@@ -19,8 +19,7 @@ public class Provider {
         this.contacts = lastName;
     }
 
-
-    public String getName() {
+     public String getName() {
         return name;
     }
 
