@@ -1,16 +1,9 @@
-package hello.Model;
+package javafxapplication.Model;
 
-import javax.persistence.*;
-
-@Entity
 public class SoldProducts {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    protected long id;
-    @Column(name="count")
-    private int count;
-    @Column(name="price")
+    private long id;
+    private Integer count;
     private Double price;
 
     protected SoldProducts() {}
@@ -25,11 +18,15 @@ public class SoldProducts {
         return id;
     }
 
-    public void setCount(int count) {
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setCount(Integer count) {
         this.count = count;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
@@ -41,8 +38,6 @@ public class SoldProducts {
         return price;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "seller")
     private Seller seller;
 
     public void setSeller(Seller seller) {
@@ -52,9 +47,12 @@ public class SoldProducts {
     public Seller getSeller() {
         return seller;
     }
+    public String getFullName(){
+        if (getSeller()!=null)
+            return  getSeller().getFullName();
+        return null;
+    }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "productName")
     private Product product;
 
     public void setProduct(Product product) {
@@ -64,5 +62,12 @@ public class SoldProducts {
     public Product getProduct() {
         return product;
     }
+    public String getProductName()
+    {
+        if (getProduct()!=null)
+            return getProduct().getName();
+        return null;
+    }
+
 }
 

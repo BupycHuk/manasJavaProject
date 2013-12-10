@@ -14,7 +14,7 @@ public class Shop
     @Column(name="contacts")
     private String contacts;
 
-    public String getName() {
+    public String getName(){
         return name;
     }
 
@@ -33,4 +33,5 @@ public class Shop
     public void setContacts(String contacts) {
         this.contacts = contacts;
     }
+
 }
