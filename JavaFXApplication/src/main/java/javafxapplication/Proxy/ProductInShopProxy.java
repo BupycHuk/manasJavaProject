@@ -1,16 +1,12 @@
 package javafxapplication.Proxy;
 
-/**
- * Created by Imanali on 12/10/13.
- */
-
 import javafxapplication.Model.RequestDto.*;
 import javafxapplication.Model.*;
 
 public class ProductInShopProxy extends Proxy {
-    public boolean addProduct(AddProductInShopRequest addProductInShopRequest){
+    public boolean addProductInShop(AddProductInShopRequest addProductInShopRequest){
         try {
-            restTemplate.postForObject(urlService.GetServerUrl("/productsinshop/"), addProductInShopRequest, ProductInShop.class);
+            restTemplate.postForObject(urlService.GetServerUrl("/addproductsinshop"), addProductInShopRequest, AddProductInShopRequest.class);
         }
         catch (Exception e)
         {
@@ -19,7 +15,7 @@ public class ProductInShopProxy extends Proxy {
         return true;
     }
 
-    public ProductInShop[] getProductInShopProxies() {
-        return restTemplate.getForObject(urlService.GetServerUrl("/productsinshop/"), ProductInShop[].class);
+    public ProductsInShop[] getProductInShopProxies() {
+        return restTemplate.getForObject(urlService.GetServerUrl("/productsinshop/"), ProductsInShop[].class);
     }
 }

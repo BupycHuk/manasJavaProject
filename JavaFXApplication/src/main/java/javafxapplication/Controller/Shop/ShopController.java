@@ -10,12 +10,7 @@ import javafxapplication.Proxy.ShopProxy;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- *
- *
- */
 public class ShopController implements Initializable {
-
 
     public ComboBox shopComboBox;
     SellerProxy sellerProxy = new SellerProxy();

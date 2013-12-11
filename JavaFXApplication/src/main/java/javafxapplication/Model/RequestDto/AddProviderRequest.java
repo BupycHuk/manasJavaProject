@@ -1,12 +1,20 @@
-package javafxapplication.Model;
+package javafxapplication.Model.RequestDto;
 
-public class Provider{
-
+/**
+ * Created by Imanali on 12/11/13.
+ */
+public class AddProviderRequest {
     private long id;
     private String name;
     private String contacts;
 
-    protected Provider() {}
+    protected AddProviderRequest() {}
+
+    public AddProviderRequest(String firstName, String lastName) {
+        this.name = firstName;
+        this.contacts = lastName;
+    }
+
 
     public String getName() {
         return name;
@@ -26,9 +34,5 @@ public class Provider{
 
     public long getId() {
         return id;
-    }
-
-    public String toString(){
-        return getId()+" - "+getName();
     }
 }

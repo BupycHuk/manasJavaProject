@@ -2,17 +2,21 @@ package javafxapplication.Controller.Uchet;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafxapplication.Model.*;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafxapplication.Model.RequestDto.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafxapplication.Model.Shop;
+import javafxapplication.Proxy.ProductInShopProxy;
+import javafxapplication.Proxy.ProductProxy;
+import javafxapplication.Proxy.ProviderProxy;
 import javafxapplication.Proxy.ShopProxy;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by Нурсултан on 08.12.13.
- */
 public class UchetController implements Initializable{
 
     public ComboBox shopComboBox;
@@ -20,34 +24,46 @@ public class UchetController implements Initializable{
     public ComboBox productComboBox;
     @FXML
     public ComboBox providerComboBox;
-    @FXML
-    private TextField text2;
-    @FXML
-    private TextField text3;
 
+    public TextField productNameText;
+    public TextField countProduct;
+    public TextField priceProduct;
 
-
+    ProviderProxy providerProxy = new ProviderProxy();
+    ProductProxy productProxy = new ProductProxy();
+    ProductInShopProxy productInShopProxy = new ProductInShopProxy();
     ShopProxy shopProxy = new ShopProxy();
+
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
+        Integer price, count;
 
-        String sellerName, login, password;
         Shop shop = (Shop)shopComboBox.getValue();
-        long shopId = (shop!=null)? (long) shop.getId() :0;
-        sellerName=text2.getText();
-        login=text3.getText();
+        Long shopId = (shop!=null)? (Long)shop.getId() :0;
 
-    }
-    @FXML
-    private void textTazala(ActionEvent event){
-        text2.setText("");
-        text3.setText("");
+        Provider provider = (Provider)providerComboBox.getValue();
+        Long providerId = (Long)provider.getId();
 
+        Product product = (Product)productComboBox.getValue();
+        Long productId = (product!=null)?(Long)product.getId():0;
+
+        price = Integer.parseInt(priceProduct.getText());
+        count = Integer.parseInt(countProduct.getText());
+
+        AddProductInShopRequest request = new AddProductInShopRequest(count,shopId,providerId,productId);
+        productInShopProxy.addProductInShop(request);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Shop[] shops = shopProxy.getShops();
         shopComboBox.getItems().setAll(shops);
+
+        Provider[] providers = providerProxy.getProviders();
+        providerComboBox.getItems().setAll(providers);
+
+        Product[] products = productProxy.getRProducts();
+        productComboBox.getItems().setAll(products);
+
     }
 }

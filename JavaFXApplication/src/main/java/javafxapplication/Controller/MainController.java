@@ -41,4 +41,12 @@ public class MainController implements Initializable {
         openControl("/View/UchetControl.fxml");
     }
 
+
+    public void addProvider(ActionEvent actionEvent) throws IOException {
+        openControl("/View/AddProviderControl.fxml");
+    }
+
+    public void addShop(ActionEvent actionEvent) throws IOException {
+        openControl("/View/AddShopControl.fxml");
+    }
 }
