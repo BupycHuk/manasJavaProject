@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafxapplication.Model.Seller;
 import javafxapplication.Proxy.SellerProxy;
+import org.springframework.beans.propertyeditors.ResourceBundleEditor;
 
 import java.net.URL;
 import java.util.Arrays;
@@ -36,5 +37,12 @@ public class ListSellerController implements Initializable {
         List<Seller> sellers = Arrays.asList(sellerProxy.getSellers());
 
         tableView1.getItems().setAll(sellers);
+    }
+
+    public void deleteSeller(ActionEvent actionEvent){
+
+        Seller seller = (Seller) tableView1.getSelectionModel().getSelectedItem();
+        long id = seller.getId();
+        sellerProxy.deleteSellerById(id);
     }
 }
