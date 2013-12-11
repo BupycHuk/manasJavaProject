@@ -8,13 +8,17 @@ public class ProductsInShop {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column(name="count")
-    private Integer count;
+    private long count;
 
     protected ProductsInShop() {}
 
-    public ProductsInShop(Shop shop, Integer count) {
+
+    public ProductsInShop(Shop shop, long count, Product product, Provider provider) {
+
         this.shop = shop;
-        this.count=count;
+        this.count = count;
+        this.product = product;
+        this.provider = provider;
     }
 
     public long getId() {
@@ -25,7 +29,7 @@ public class ProductsInShop {
         this.count = count;
     }
 
-    public Integer getCount() {
+    public long getCount() {
         return count;
     }
 
