@@ -2,13 +2,7 @@ package javafxapplication.Model.RequestDto;
 
 import java.io.Serializable;
 
-/**
- * Created with IntelliJ IDEA.
- * User: admin
- * Date: 25.11.13
- * Time: 13:36
- * To change this template use File | Settings | File Templates.
- */
+
 public class AddSellerRequest implements Serializable {
     private long shopId;
     private String sellername;
@@ -21,7 +15,6 @@ public class AddSellerRequest implements Serializable {
     }
 
     public AddSellerRequest(long shopId, String sellername, String login, String password) {
-        //To change body of created methods use File | Settings | File Templates.
         this.shopId = shopId;
         this.sellername = sellername;
         this.login = login;

@@ -1,24 +1,14 @@
-package hello.Model;
+package javafxapplication.Model;
 
-import javax.persistence.*;
-
-@Entity
 public class ProductsInShop {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name="count")
-    private long count;
+    private Integer count;
 
     protected ProductsInShop() {}
 
-
-    public ProductsInShop(Shop shop, long count, Product product, Provider provider) {
-
+    public ProductsInShop(Shop shop, Integer count) {
         this.shop = shop;
-        this.count = count;
-        this.product = product;
-        this.provider = provider;
+        this.count=count;
     }
 
     public long getId() {
@@ -29,12 +19,10 @@ public class ProductsInShop {
         this.count = count;
     }
 
-    public long getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "shop")
     private Shop shop;
 
     public void setShop(Shop shop) {
@@ -45,8 +33,6 @@ public class ProductsInShop {
         return shop;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "provider")
     private Provider provider;
 
     public Provider getName(){
@@ -57,8 +43,6 @@ public class ProductsInShop {
         this.provider=provider;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "product")
     private Product product;
 
     public void setProduct(Product product) {
@@ -71,4 +55,3 @@ public class ProductsInShop {
 
 
 }
-

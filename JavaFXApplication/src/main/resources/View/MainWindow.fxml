@@ -14,9 +14,13 @@
                     <items>
                         <MenuItem mnemonicParsing="false" text="Сатуучу кошуу" onAction="#addSeller"/>
                         <MenuItem mnemonicParsing="false" text="Сатуучулардын тизмеси" onAction="#listSeller"/>
+                        <MenuItem mnemonicParsing="false" text="Жаңы жабдып туруучу кошуу" onAction="#addProvider"/>
+                        <MenuItem mnemonicParsing="false" text="Жаңы дүкөн кошуу" onAction="#addShop"/>
                     </items>
                 </Menu>
-                <Menu text="Menu2"/>
+                <Menu text="Учет">
+                    <MenuItem mnemonicParsing="false" text="Буйум учетко алуу" onAction="#Uchet"/>
+                </Menu>
 
             </menus>
         </MenuBar>

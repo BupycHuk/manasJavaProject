@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="481.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javafxapplication.Controller.Shop.AddShopController">
+  <children>
+    <Label layoutX="112.0" layoutY="14.0" minHeight="16.0" minWidth="69.0" text="Жаңы дүкөн кошуу" textFill="#00993d">
+      <font>
+        <Font size="20.0" />
+      </font>
+    </Label>
+    <Label layoutX="22.0" layoutY="95.0" text="Дүкөндүн аты" textFill="BLACK">
+      <font>
+        <Font size="14.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="22.0" layoutY="135.0" text="Контакт" textFill="BLACK" />
+    <TextField id="text2" fx:id="shopName" layoutX="198.0" layoutY="91.0" prefHeight="27.0" prefWidth="200.0" />
+    <TextField id="text3" fx:id="shopContact" layoutX="198.0" layoutY="128.0" prefHeight="27.0" prefWidth="200.0" />
+    <Button fx:id="button" layoutX="310.0" layoutY="173.0" onAction="#ButtonAction" prefHeight="27.0" prefWidth="88.0" text="OK" />
+  </children>
+</AnchorPane>

@@ -1,22 +1,18 @@
-package hello.Model;
+package javafxapplication.Model.RequestDto;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-public class Shop
-{
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+/**
+ * Created by Imanali on 12/11/13.
+ */
+public class AddShopRequest implements Serializable {
     private long id;
-    @Column(name="name")
     private String name;
-
-    @Column(name="contacts")
     private String contacts;
 
-    protected Shop(){}
+    protected AddShopRequest(){}
 
-    public Shop(String name, String contacts) {
+    public AddShopRequest(String name, String contacts){
 
         this.name = name;
         this.contacts = contacts;

@@ -1,9 +1,9 @@
 package hello.Controller;
 
 import hello.Config;
-import hello.Model.RequestDto.AddShopRequest;
-import hello.Model.Shop;
-import hello.Model.ShopRepository;
+import hello.Model.Provider;
+import hello.Model.ProviderRepository;
+import hello.Model.RequestDto.AddProviderRequest;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Component;
@@ -14,25 +14,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Component
 @Controller
-public class ShopController {
-    @RequestMapping(value = "/shops")
+public class ProviderController {
+    @RequestMapping(value = "/providers")
     public @ResponseBody
-    Iterable<Shop> listSellers() {
-        return  getRepository().findAll();
+    Iterable<Provider> listProviders(){
+        return getRepository().findAll();
     }
 
-    @RequestMapping(value = "/addshop")
+    @RequestMapping(value = "/addprovider")
     public @ResponseBody
-    Shop addShop(@RequestBody AddShopRequest addShopRequest) {
+    Provider addProvider(@RequestBody AddProviderRequest addProviderRequest){
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        Shop shop= new Shop(addShopRequest.getName(),addShopRequest.getContacts());
-        getRepository().save(shop);
-        return shop;
+        Provider provider = new Provider(addProviderRequest.getName(),addProviderRequest.getContacts());
+        getRepository().save(provider);
+        return provider;
     }
 
-    public ShopRepository getRepository() {
+    public ProviderRepository getRepository() {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        return context.getBean(ShopRepository.class);
+        return context.getBean(ProviderRepository.class);
     }
 }
-
