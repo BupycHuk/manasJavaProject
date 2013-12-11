@@ -16,6 +16,7 @@
             <MenuItem mnemonicParsing="false" onAction="#listSeller" text="Сатуучулардын тизмеси" />
             <MenuItem mnemonicParsing="false" onAction="#listProducts" text="Буюмдардын тизмеси" />
             <MenuItem mnemonicParsing="false" onAction="#deleteProducts" text="Буюмду эсептен чыгаруу" />
+              <MenuItem mnemonicParsing="false" onAction="#listSoldProducts" text="Эсептен чыккан буюмдардын тизмеси" />
             <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Чыгуу" />
             </items>
           </Menu>

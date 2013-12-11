@@ -1,6 +1,5 @@
 package javafxapplication.Model;
 
-
 public class ProductsInShop
 {
     private long id;
@@ -35,7 +34,7 @@ public class ProductsInShop
         this.shop = shop;
     }
 
-    public String getShopname()
+    public String getShopName()
     {
         if (getShop()!=null)
             return getShop().getName();
@@ -49,7 +48,7 @@ public class ProductsInShop
     public void setCount(Integer count) {
         this.count = count;
     }
-    public Provider getName() {
+    public Provider getProvider() {
         return provider;
     }
 
@@ -59,8 +58,8 @@ public class ProductsInShop
 
     public String getNameProvider()
     {
-        if (getName()!=null)
-            return getName().getName();
+        if (getProvider()!=null)
+            return getProvider().getName();
         return null;
     }
 
@@ -74,9 +73,7 @@ public class ProductsInShop
 
     public String getNameProduct()
     {
-        if (getProduct()!=null)
             return getProduct().getName();
-        return null;
     }
 
     public Product getPrice() {
@@ -92,4 +89,7 @@ public class ProductsInShop
             return getProduct().getPrice();
         return null;
     }
+
+
+
 }

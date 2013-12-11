@@ -43,10 +43,15 @@ public class MainController implements Initializable {
     }
 
     public void listProducts(ActionEvent actionEvent) throws IOException {
-        openControl("/View/ListProductControl.fxml");
+        openControl("/View/ListProductsControl.fxml");
     }
 
     public void deleteProducts(ActionEvent actionEvent)throws IOException {
-        openControl("/View/DeleteProductControl.fxml");
+        openControl("/View/WritingOffProductControl.fxml");
+    }
+
+    public void listSoldProducts(ActionEvent actionEvent) throws IOException {
+
+        openControl("/View/ListSoldProductsControl.fxml");
     }
 }

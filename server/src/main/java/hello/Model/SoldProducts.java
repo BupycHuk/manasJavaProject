@@ -25,6 +25,7 @@ public class SoldProducts {
 
     }
 
+
     public long getId() {
         return id;
     }
