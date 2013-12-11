@@ -1,20 +1,14 @@
-package hello.Model;
+package javafxapplication.Model;
 
-import javax.persistence.*;
+/**
+ * Created by Admin on 10.12.13.
+ */
+public class Product {
 
-@Entity
-public class Product
-{
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-    @Column(name="nameProduct")
     private String nameProduct;
-    @Column(name="price")
     private Double price;
-    @Column (name="sold")
     private boolean sold;
-
 
     public long getId() {
         return id;
@@ -24,8 +18,8 @@ public class Product
         return nameProduct;
     }
 
-    public void setNameProduct(String name) {
-        this.nameProduct = name;
+    public void setNameProduct(String nameProduct) {
+        this.nameProduct = nameProduct;
     }
 
     public Double getPrice() {
@@ -34,6 +28,10 @@ public class Product
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public boolean isSold() {

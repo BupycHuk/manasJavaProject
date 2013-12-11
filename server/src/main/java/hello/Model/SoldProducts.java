@@ -61,7 +61,7 @@ public class SoldProducts {
         this.seller = seller;
     }
 
-    public Seller getSeller() {
+    public Seller getSeller    () {
         return seller;
     }
 

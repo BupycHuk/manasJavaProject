@@ -37,4 +37,10 @@ public class MainController implements Initializable {
     public void listSeller(ActionEvent actionEvent) throws IOException {
         openControl("/View/ListSellerControl.fxml");
     }
+    public void listProvider(ActionEvent actionEvent) throws IOException {
+        openControl("/View/ListProviderControl.fxml");
+    }
+    public void listProduct(ActionEvent actionEvent) throws IOException {
+        openControl("/View/ListProductControl.fxml");
+    }
 }

@@ -16,7 +16,16 @@
                         <MenuItem mnemonicParsing="false" text="Сатуучулардын тизмеси" onAction="#listSeller"/>
                     </items>
                 </Menu>
-                <Menu text="Menu2"/>
+                <Menu text="Жабдуучулар">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Жабдуучулардын тизмеси" onAction="#listProvider"/>
+                    </items>
+                </Menu>
+                <Menu text="Буюмдар">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Буюмдардын тизмеси" onAction="#listProduct"/>
+                    </items>
+                </Menu>
 
             </menus>
         </MenuBar>
