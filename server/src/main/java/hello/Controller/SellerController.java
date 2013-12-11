@@ -24,7 +24,6 @@ public class SellerController {
     @RequestMapping(value = "/sellers")
     public @ResponseBody
     Iterable<Seller> listSellers() {
-
         return  getRepository().findAll();
     }
 
