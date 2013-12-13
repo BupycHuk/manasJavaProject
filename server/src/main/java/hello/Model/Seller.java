@@ -51,7 +51,7 @@ public class Seller {
     public String getPassword() {
         return password;
     }
-
+                    //commit
     public void setPassword(String password) {
         this.password = password;
     }
