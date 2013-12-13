@@ -8,10 +8,10 @@ public class SoldProducts {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-//    @Column(name="sellerName")
-//    private String sellerName;
-//    @Column(name="productName")
-//    private String productName;
+    @Column(name="sellerName")
+    private String sellerName;
+    @Column(name="productName")
+    private String productName;
     @Column(name="count")
     private Integer count;
     @Column(name="price")
@@ -19,10 +19,15 @@ public class SoldProducts {
 
     protected SoldProducts() {}
 
-    public SoldProducts(Integer count, Double price) {
-        this.count=count;
-        this.price=price;
+//    public SoldProducts(String sellerName,Integer count, Double price) {
+//        this.sellerName=sellerName;
+//        this.count=count;
+//        this.price=price;
+//
+//    }
 
+    public SoldProducts(String buyumAty, String buyumSany) {
+        //To change body of created methods use File | Settings | File Templates.
     }
 
     public long getId() {
@@ -38,8 +43,8 @@ public class SoldProducts {
 //    }
 
     public void setCount(Integer count) {
-        this.count = count;
-    }
+            this.count = count;
+}
 
     public Integer getCount() {
         return count;
@@ -66,7 +71,7 @@ public class SoldProducts {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "productkName")
+    @JoinColumn(name = "productsName")
     private Product product;
 
     public void setProduct(Product product) {
