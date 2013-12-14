@@ -1,8 +1,11 @@
 package hello.Controller;
 
 import hello.Config;
-import hello.Model.*;
 import hello.Model.RequestDto.AddSellerRequest;
+import hello.Model.Seller;
+import hello.Model.SellerRepository;
+import hello.Model.Shop;
+import hello.Model.ShopRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Component;
@@ -47,14 +50,6 @@ public class SellerController {
         getRepository().delete(seller);
          return true;
     }
-    @RequestMapping(value = "/change/{name}", method = RequestMethod.PUT)
-    public @ResponseBody
-    boolean  changeUserPassword(@PathVariable("name") String name){
-        Iterable<Seller> seller = getRepository().findByFullName(name);
-        getRepository().save(seller);
-        return true;
-    }
-
 
     public SellerRepository getRepository() {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
