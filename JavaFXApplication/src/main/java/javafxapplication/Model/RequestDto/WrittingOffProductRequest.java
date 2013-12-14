@@ -4,16 +4,22 @@ import java.io.Serializable;
 
 public class WrittingOffProductRequest implements Serializable {
     private long productId;
-    private String product;
+    private String sellerName;
+    private Integer count;
+    private Double price;
+
+
 
     public WrittingOffProductRequest()
     {
 
     }
 
-    public WrittingOffProductRequest(long productId, String product) {
+    public WrittingOffProductRequest(long productId, String sellerName,Integer count,Double price) {
         this.productId = productId;
-        this.product = product;
+        this.sellerName = sellerName;
+        this.count=count;
+        this.price=price;
     }
 
     public WrittingOffProductRequest(long productId) {
@@ -29,12 +35,28 @@ public class WrittingOffProductRequest implements Serializable {
         this.productId = productId;
     }
 
-    public String getProduct() {
-        return product;
+    public String getSellerName() {
+        return sellerName;
     }
 
-    public void setProduct(String product)
+    public void setSellerName(String sellerName)
     {
-        this.product = product;
+        this.sellerName = sellerName;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

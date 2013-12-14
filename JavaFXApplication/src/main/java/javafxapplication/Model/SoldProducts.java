@@ -9,7 +9,7 @@ public class SoldProducts {
 
     protected SoldProducts() {}
 
-    public SoldProducts(Integer count, Double price,Seller seller,Product product) {
+    public SoldProducts(Product product,Seller seller,Integer count, Double price) {
         this.count = count;
         this.price = price;
         this.seller = seller;
@@ -65,4 +65,5 @@ public class SoldProducts {
     public long getId() {
         return id;
     }
+
 }

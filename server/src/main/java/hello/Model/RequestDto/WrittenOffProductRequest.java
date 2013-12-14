@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class WrittenOffProductRequest implements Serializable {
     private long productId;
-    private String productName;
+    private String sellerName;
     private  Integer count;
     private  Double price;
 
@@ -12,11 +12,11 @@ public class WrittenOffProductRequest implements Serializable {
 
     }
 
-    public WrittenOffProductRequest(long shopId, String sellername,Integer productCount,Double productPrice) {
-        this.productId = shopId;
-        this.productName = sellername;
-        this.count =productCount;
-        this.price =productPrice;
+    public WrittenOffProductRequest(long productId, String sellerName,Integer count,Double price) {
+        this.productId = productId;
+        this.sellerName = sellerName;
+        this.count =count;
+        this.price =price;
     }
 
     public long getProductId() {
@@ -28,13 +28,13 @@ public class WrittenOffProductRequest implements Serializable {
         this.productId = productId;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getSellerName() {
+        return sellerName;
     }
 
-    public void setProductName(String productName)
+    public void setSellerName(String sellerName)
     {
-        this.productName = productName;
+        this.sellerName = sellerName;
     }
 
     public Integer getCount() {

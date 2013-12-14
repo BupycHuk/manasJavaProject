@@ -26,11 +26,11 @@ public class WrittingOffProductController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-
+        Integer count = Integer.valueOf(text3.getText());
         Product product = (Product)productComboBox.getValue();
         long productId = (product!=null)? (long) product.getId() :0;
 
-        WrittingOffProductRequest request = new WrittingOffProductRequest(productId);
+        WrittingOffProductRequest request = new WrittingOffProductRequest(productId,null,count,null);
 
         soldProductsProxy.writtingOffProduct(request);
     }

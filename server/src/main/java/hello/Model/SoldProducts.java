@@ -25,6 +25,10 @@ public class SoldProducts {
 
     }
 
+    public SoldProducts(long productId, String sellerName, Integer count, Double price) {
+        //To change body of created methods use File | Settings | File Templates.
+    }
+
 
     public long getId() {
         return id;

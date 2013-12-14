@@ -29,6 +29,7 @@ public class SoldProductsController {
         ProductRepository productRepository = context.getBean(ProductRepository.class);
         Product product = productRepository.findOne(writtenOffProductRequest.getProductId());
 
+//        SoldProducts soldProducts= new SoldProducts(writtenOffProductRequest.getProductId(),writtenOffProductRequest.getSellerName(),writtenOffProductRequest.getCount(),writtenOffProductRequest.getPrice());
         SoldProducts soldProducts= new SoldProducts(writtenOffProductRequest.getCount(),writtenOffProductRequest.getPrice());
         soldProducts.setProduct(product);
         getRepository().save(soldProducts);

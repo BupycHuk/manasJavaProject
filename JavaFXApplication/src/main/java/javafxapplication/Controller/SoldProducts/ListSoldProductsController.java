@@ -20,17 +20,17 @@ public  class ListSoldProductsController implements Initializable {
     public TableColumn productCount;
     public TableColumn sellerName;
     public TableView tableView3;
-    public TableColumn price;
-    public TableColumn count;
+//    public TableColumn price;
+//    public TableColumn count;
 
     SoldProductsProxy soldProductsProxy = new SoldProductsProxy();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        productName.setCellValueFactory(new PropertyValueFactory<SoldProducts, String>("nameProduct"));
+        productName.setCellValueFactory(new PropertyValueFactory<SoldProducts, String>("product"));
         productPrice.setCellValueFactory(new PropertyValueFactory<SoldProducts, String>("price"));
         productCount.setCellValueFactory(new PropertyValueFactory<SoldProducts, String>("count"));
-        sellerName.setCellValueFactory(new PropertyValueFactory<SoldProducts, String>("nameSeller"));
+        sellerName.setCellValueFactory(new PropertyValueFactory<SoldProducts, String>("seller"));
     }
 
     public void textTolukta(ActionEvent actionEvent) {
