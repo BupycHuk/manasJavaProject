@@ -22,15 +22,15 @@ public class WrittingOffProductController implements Initializable {
 
     SoldProductsProxy soldProductsProxy = new SoldProductsProxy();
     ProductProxy productProxy = new ProductProxy();
-    SellerProxy sellerProxy = new SellerProxy();
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        Integer count = Integer.valueOf(text3.getText());
         Product product = (Product)productComboBox.getValue();
+        Integer count = Integer.valueOf(text3.getText());
+        Double price = product.getPrice();
         long productId = (product!=null)? (long) product.getId() :0;
 
-        WrittingOffProductRequest request = new WrittingOffProductRequest(productId,null,count,null);
+        WrittingOffProductRequest request = new WrittingOffProductRequest(productId,null,count,price);
 
         soldProductsProxy.writtingOffProduct(request);
     }
