@@ -31,6 +31,6 @@ public class SellerProxy extends Proxy {
 
     public void deleteSellerById(long id){
 
-        restTemplate.getForObject(urlService.GetServerUrl("/delete/"+id), Seller[].class);
+        restTemplate.getForObject(urlService.GetServerUrl("/delete/"+id), boolean.class);
     }
 }
