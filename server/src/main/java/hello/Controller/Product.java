@@ -1,7 +1,7 @@
 package hello.Controller;
 
 import hello.Config;
-import hello.Model.ProductsRepository;
+import hello.Model.ProductRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Component;
@@ -18,8 +18,8 @@ public class Product {
         return getRepository().findAll();
 
     }
-    public ProductsRepository getRepository() {
+    public ProductRepository getRepository() {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        return context.getBean(ProductsRepository.class);
+        return context.getBean(ProductRepository.class);
     }
 }

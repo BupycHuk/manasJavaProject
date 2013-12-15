@@ -36,9 +36,9 @@ public class ProductsInShopController implements Initializable {
 
     public void textToluktoo(ActionEvent actionEvent) {
         Shop shop = (Shop) shopComboBox.getValue();
-        String Name = shop.getName();
+        long shopId = shop.getId();
 
-        List<ProductInShop> productInShops = Arrays.asList(productInShopProxy.getProductInShops(Name));
+        List<ProductInShop> productInShops = Arrays.asList(productInShopProxy.getProductInShops(shopId));
         tableView1.getItems().setAll(productInShops);
     }
 }

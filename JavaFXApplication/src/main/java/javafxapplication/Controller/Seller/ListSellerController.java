@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafxapplication.Model.Seller;
+import javafxapplication.Proxy.SellerProxy;
 
 import java.net.URL;
 import java.util.Arrays;

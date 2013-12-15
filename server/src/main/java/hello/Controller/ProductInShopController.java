@@ -17,8 +17,8 @@ public class ProductInShopController {
 
     @RequestMapping(value = "/productsinshop/{Shop}")
     public @ResponseBody
-    Iterable<ProductsInShop> listProductsInShop(@PathVariable("Shop") String Shop){
-        return getRepository().findByName(Shop);
+    Iterable<ProductsInShop> listProductsInShop(@PathVariable("Shop") long Shop){
+        return getRepository().findByShop(Shop);
     }
 
 
